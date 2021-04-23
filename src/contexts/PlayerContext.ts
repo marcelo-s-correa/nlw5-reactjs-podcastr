@@ -1,6 +1,5 @@
 import { createContext } from 'react';
 
-
 type Episode = {
     title: string;
     members: string;
@@ -12,7 +11,10 @@ type Episode = {
 type PlayerContextData = {
     episodeList: Episode[];
     currentEpisodeIndex: number;
-    play: (episode) => void;
+    isPlaying: boolean;
+    play: (episode: Episode) => void;
+    togglePlay: () => void;
+    setPlayingState: (state: boolean) => void;
 };
 
 export const PlayerContext = createContext({} as PlayerContextData);
